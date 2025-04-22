@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>দৌড়া ট্রাম্প দৌড়া</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="start-screen">
+    <div id="created-by">Created by <span style="color: #ff6347;">MIRAZ</span></div>
+    <button id="start-btn">দৌড় শুরু</button>
+  </div>
+
+  <div id="gameContainer">
+    <div id="trump"></div>
+    <div id="thakur"></div>
+    <img id="caughtGif" src="caught.gif" alt="Caught!" />
+    <div id="score">score: 0</div>
+    <div id="game-over">
+      <h1>ট্রাম্পকে সিল মেরে দিলো রবিঠাকুর</h1>
+      <button id="restart-btn">আবার হবে নাকি?</button>
+    </div>
+  </div>
+
+  <audio id="jumpSound" src="jump.mp3"></audio>
+  <audio id="startSound" src="start.mp3"></audio>
+  <audio id="caughtSound" src="caught.mp3"></audio>
+  <audio id="fightSound" src="fight.mp3"></audio>
+  <audio id="backgroundMusic" src="background-music.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
