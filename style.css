@@ -59,7 +59,7 @@ body {
 #trump {
   position: absolute;
   bottom: 0;
-  left: 200px;
+  left: 20vw;
   width: 15vw;
   height: 15vw;
   background: url('trump.gif') no-repeat center/contain;
@@ -80,7 +80,7 @@ body {
 #thakur {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 18vw;
   width: 12vw;
   height: 12vw;
   background: url('thakur.gif') no-repeat center/contain;
@@ -89,7 +89,7 @@ body {
 #caughtGif {
   position: absolute;
   bottom: 0;
-  left: 180px;
+  left: 18vw;
   width: 15vw;
   display: none;
   z-index: 5;
@@ -97,8 +97,8 @@ body {
 
 #score {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 2vw;
+  left: 2vw;
   font-size: 4vw;
   font-weight: bold;
   color: #000;
@@ -108,13 +108,15 @@ body {
   position: absolute;
   top: 40%;
   left: 50%;
+  font-size: 3vw;
+  font-weight: bold;
   transform: translate(-50%, -50%);
   display: none;
   text-align: center;
 }
 
 #created-by {
-  font-size: 30px;
+  font-size: 3vw;
   color: #000;
   margin-bottom: 20px;
 }
@@ -122,8 +124,8 @@ body {
 .obstacle {
   position: absolute;
   bottom: 0;
-  width: 6vw;
-  height: 6vw;
+  width: 4vw;
+  height: 4vw;
   background: url('obstacle.png') no-repeat center/contain;
 }
 
