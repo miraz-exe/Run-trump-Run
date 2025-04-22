@@ -41,7 +41,6 @@ function startGame() {
   startSound.play();
   backgroundMusic.play();
   spawnObstacle();
-  spawnMissile();
   movethakur();
   updateScoreLoop();
 }
@@ -100,38 +99,6 @@ function spawnObstacle() {
   setTimeout(spawnObstacle, Math.random() * 1500 + 1000);
 }
 
-function spawnMissile() {
-  if (isGameOver) return;
-
-  const missile = document.createElement('div');
-  missile.classList.add('missile');
-  let pos = gameContainer.offsetWidth;
-  missile.style.left = pos + 'px';
-  gameContainer.appendChild(missile);
-
-  const interval = setInterval(() => {
-    if (isGameOver) {
-      clearInterval(interval);
-      missile.remove();
-      return;
-    }
-
-    pos -= 10;
-    missile.style.left = pos + 'px';
-
-    if (checkCollision(missile)) {
-      endGame();
-      clearInterval(interval);
-    }
-
-    if (pos < -60) {
-      missile.remove();
-      clearInterval(interval);
-    }
-  }, 20);
-
-  setTimeout(spawnMissile, Math.random() * 3000 + 2000);
-}
 
 function checkCollision(el) {
   const trumpRect = trump.getBoundingClientRect();
