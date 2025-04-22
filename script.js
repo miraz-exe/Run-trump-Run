@@ -116,9 +116,9 @@ function movethakur() {
   let left = 0;
   const interval = setInterval(() => {
     if (isGameOver) {
-      if (left < 180) {
+      if (left < 18) {
         left += 5;
-        thakur.style.left = left + 'px';
+        thakur.style.left = left + 'vw';
       } else {
         caughtGif.style.display = 'block';
         thakur.style.display = 'none';
@@ -128,9 +128,9 @@ function movethakur() {
         clearInterval(interval);
       }
     } else {
-      if (left < 100) {
+      if (left < 10) {
         left += 1;
-        thakur.style.left = left + 'px';
+        thakur.style.left = left + 'vw';
       }
     }
   }, 30);
