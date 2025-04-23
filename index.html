@@ -5,22 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>দৌড়া ট্রাম্প দৌড়া</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- ✅ Preload important images -->
+  <link rel="preload" as="image" href="background.jpg">
+  <link rel="preload" as="image" href="trump.gif">
+  <link rel="preload" as="image" href="thakur.gif">
+  <link rel="preload" as="image" href="caught.gif">
+  <link rel="preload" as="image" href="obstacle.png">
+
+  <!-- ✅ Preload audio files -->
+  <link rel="preload" as="audio" href="jump.mp3" />
+  <link rel="preload" as="audio" href="start.mp3" />
+  <link rel="preload" as="audio" href="caught.mp3" />
+  <link rel="preload" as="audio" href="fight.mp3" />
+  <link rel="preload" as="audio" href="background-music.mp3" />
+
+  <style>
+    #loading-animation {
+      font-size: 3vw;
+      margin-top: 20px;
+      color: #007bff;
+      animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.2; }
+      50% { opacity: 1; }
+      100% { opacity: 0.2; }
+    }
+
+    #start-btn {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <!-- ✅ Hidden preloader to force asset load -->
+  <div style="width: 0; height: 0; overflow: hidden;">
+    <img src="background.jpg" alt="" loading="eager" />
+    <img src="trump.gif" alt="" loading="eager" />
+    <img src="thakur.gif" alt="" loading="eager" />
+    <img src="caught.gif" alt="" loading="eager" />
+    <img src="obstacle.png" alt="" loading="eager" />
+  </div>
+
   <div id="start-screen">
     <div id="created-by">Created by <span style="color: #ff6347;">MIRAZ</span></div>
+    <div id="loading-animation">Loading...</div>
     <button id="start-btn">দৌড় শুরু</button>
   </div>
 
   <div id="gameContainer">
     <div id="trump"></div>
     <div id="thakur"></div>
-    <img id="caughtGif" src="caught.gif" alt="Caught!" />
+    <img id="caughtGif" src="caught.gif" alt="Caught!" loading="eager" />
     <div id="score">score: 0</div>
     <div id="game-over">
-      
       ট্রাম্পকে সিল মেরে দিলো রবিঠাকুর
-      
       <button id="restart-btn">আবার হবে নাকি?</button>
     </div>
   </div>
@@ -28,15 +69,25 @@
   <div id="rotate-notice">
     <p>Please rotate your device to landscape mode to play the game.</p>
   </div>
-  
 
-
+  <!-- Audio Files -->
   <audio id="jumpSound" src="jump.mp3"></audio>
   <audio id="startSound" src="start.mp3"></audio>
   <audio id="caughtSound" src="caught.mp3"></audio>
   <audio id="fightSound" src="fight.mp3"></audio>
   <audio id="backgroundMusic" src="background-music.mp3" loop></audio>
 
+  <!-- Game Script -->
   <script src="script.js"></script>
+
+  <!-- ⏳ 5s Loading Script -->
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading-animation').style.display = 'none';
+        document.getElementById('start-btn').style.display = 'inline-block';
+      }, 5000); // 5 seconds
+    });
+  </script>
 </body>
 </html>
