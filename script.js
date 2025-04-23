@@ -144,14 +144,21 @@ function movethakur() {
 
 function endGame() {
   isGameOver = true;
+  
+  // Stop the start sound
+  startSound.pause();
+  startSound.currentTime = 0;
+
   backgroundMusic.play(); // BGM continues playing
   gameOverScreen.style.display = 'block';
   clearObstacles(); // Clear obstacles when the game is over
+
   if (score > highScore) {
     highScore = score;
     localStorage.setItem('highScore', highScore);
   }
 }
+
 
 function clearObstacles() {
   const obstacles = document.querySelectorAll('.obstacle');
