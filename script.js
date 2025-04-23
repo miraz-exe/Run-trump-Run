@@ -27,12 +27,18 @@ restartBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.code === 'Space') {
+  if (e.code === 'Space' && !isGameOver && !document.getElementById('start-screen').style.display !== 'none') {
     jump();
   }
 });
 
-document.addEventListener('touchstart', jump);
+
+document.addEventListener('touchstart', function(e) {
+  if (e.target.id !== 'start-btn' && !isGameOver) {
+    jump();
+  }
+});
+
 
 function startGame() {
   score = 0;
