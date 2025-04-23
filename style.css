@@ -71,9 +71,9 @@ body {
 
 @keyframes jump {
   0% { transform: translateY(0); }
-  40% { transform: translateY(-200px); }
-  60% { transform: translateY(-200px); }
-  80% { transform: translateY(-100px); }
+  40% { transform: translateY(-20vw); }
+  60% { transform: translateY(-20vw); }
+  80% { transform: translateY(-10vw); }
   100% { transform: translateY(0); }
 }
 
@@ -154,4 +154,21 @@ body {
   #gameContainer {
     display: none !important;
   }
+}
+
+#loading-animation {
+  font-size: 3vw;
+  margin-top: 20px;
+  color: #007bff;
+  animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+#start-btn {
+  display: none;
 }
